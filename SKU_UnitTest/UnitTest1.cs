@@ -102,25 +102,25 @@ namespace SKU_UnitTest
             ProductDetails productA = new ProductDetails();
             productA.ProductType = "A";
             productA.ProductPrice = 50;
-            productA.ProductQuantity = 1;
+            productA.ProductQuantity = 3;
             products.Add(productA);
 
             ProductDetails productB = new ProductDetails();
             productB.ProductType = "B";
             productB.ProductPrice = 30;
-            productB.ProductQuantity = 1;
+            productB.ProductQuantity = 5;
             products.Add(productB);
 
             ProductDetails productC = new ProductDetails();
-            productC.ProductType = "B";
+            productC.ProductType = "C";
             productC.ProductPrice = 20;
             productC.ProductQuantity = 1;
             products.Add(productC);
 
             ProductDetails productD = new ProductDetails();
-            productC.ProductType = "D";
-            productC.ProductPrice = 15;
-            productC.ProductQuantity = 1;
+            productD.ProductType = "D";
+            productD.ProductPrice = 15;
+            productD.ProductQuantity = 1;
             products.Add(productD);
 
             int total = 280;
