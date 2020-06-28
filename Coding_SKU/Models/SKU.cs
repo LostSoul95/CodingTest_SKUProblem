@@ -70,7 +70,8 @@ namespace Coding_SKU.Models
             int priceE = 30;
             
             // A and B rules are normal 
-            // C and D we decipher the number of duplets and if one variable exceeds the other
+            // C and D we decipher the number of pairs and if one variable exceeds the other we compute the 
+            // value for that
            
             foreach (var product in products)
             {
@@ -130,6 +131,7 @@ namespace Coding_SKU.Models
                 totalD = totalD - totalC;
 
                 //Define new element for D
+
                 var Product = new ProductDetails();
                 Product.ProductType = "D";
                 Product.ProductQuantity = totalD;
