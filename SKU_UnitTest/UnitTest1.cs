@@ -45,8 +45,10 @@ namespace SKU_UnitTest
            // ASSERT 
 
            Assert.True(response == total);
+
             
 
+            
         }
         [Fact]
         public async Task TestSKU2()

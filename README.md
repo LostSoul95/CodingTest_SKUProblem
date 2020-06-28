@@ -1,4 +1,4 @@
-SKU problem - This solution comtains a console application along with an Xunit framework based testing approach.
+SKU problem - This solution contains a console application along with an Xunit framework based testing approach.
 
 Entrypoint just allows you to enter number of items in your order and each items of a specific type.
 
