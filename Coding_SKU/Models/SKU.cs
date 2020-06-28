@@ -126,7 +126,11 @@ namespace Coding_SKU.Models
                 total += totalE * priceE;
                 totalD = totalD - totalC;
 
-                //Define 
+                //Define new element for D
+                var Product = new ProductDetails();
+                Product.ProductType = "D";
+                Product.ProductQuantity = totalD;
+                total += GetTotalPriceForEachType(Product);
             }
 
             return total;
