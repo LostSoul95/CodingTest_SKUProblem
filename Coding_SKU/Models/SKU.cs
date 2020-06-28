@@ -121,6 +121,8 @@ namespace Coding_SKU.Models
 
             }
 
+            //IF D exceeds C
+
             if (totalD - totalC >0)
             {
                 totalE = totalC;
