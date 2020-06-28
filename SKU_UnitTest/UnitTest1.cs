@@ -48,5 +48,92 @@ namespace SKU_UnitTest
             
 
         }
+        [Fact]
+        public async Task TestSKU2()
+        {
+            //Arrange
+
+            InterfaceSKU sku = new SKU();
+
+            // We will basically test the service layer by mocking objects from out test class
+            var products = new List<ProductDetails>();
+
+            ProductDetails productA = new ProductDetails();
+            productA.ProductType = "A";
+            productA.ProductPrice = 50;
+            productA.ProductQuantity = 5;
+            products.Add(productA);
+
+            ProductDetails productB = new ProductDetails();
+            productB.ProductType = "B";
+            productB.ProductPrice = 30;
+            productB.ProductQuantity = 5;
+            products.Add(productB);
+
+            ProductDetails productC = new ProductDetails();
+            productC.ProductType = "B";
+            productC.ProductPrice = 20;
+            productC.ProductQuantity = 1;
+            products.Add(productC);
+
+            int total = 370;
+
+            // ACT
+
+            var response = sku.GetTotal(products);
+
+            // ASSERT 
+
+            Assert.True(response == total);
+
+
+        }
+
+        [Fact]
+        public async Task TestSKU3()
+        {
+            //Arrange
+
+            InterfaceSKU sku = new SKU();
+
+            // We will basically test the service layer by mocking objects from out test class
+            var products = new List<ProductDetails>();
+
+            ProductDetails productA = new ProductDetails();
+            productA.ProductType = "A";
+            productA.ProductPrice = 50;
+            productA.ProductQuantity = 1;
+            products.Add(productA);
+
+            ProductDetails productB = new ProductDetails();
+            productB.ProductType = "B";
+            productB.ProductPrice = 30;
+            productB.ProductQuantity = 1;
+            products.Add(productB);
+
+            ProductDetails productC = new ProductDetails();
+            productC.ProductType = "B";
+            productC.ProductPrice = 20;
+            productC.ProductQuantity = 1;
+            products.Add(productC);
+
+            ProductDetails productD = new ProductDetails();
+            productC.ProductType = "D";
+            productC.ProductPrice = 15;
+            productC.ProductQuantity = 1;
+            products.Add(productD);
+
+            int total = 280;
+
+            // ACT
+
+            var response = sku.GetTotal(products);
+
+            // ASSERT 
+
+            Assert.True(response == total);
+
+
+        }
     }
 }
