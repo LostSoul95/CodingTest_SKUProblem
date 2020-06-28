@@ -8,19 +8,29 @@ namespace Coding_SKU
     {
         static void Main(string[] args)
         {
+            // Create an instance of Interface
+            InterfaceSKU SKU = new SKU();
+
             List<ProductDetails> products = new List<ProductDetails>();
 
             Console.WriteLine("total number of order");
             int a = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < a; i++)
+            while (a > 0)
             {
+
                 Console.WriteLine("enter the type of product:A,B,C or D");
                 string type = Console.ReadLine();
-                Product p = new Product(type);
-                products.Add(p);
+                Console.WriteLine("enter the quantity of the product type");
+                int count = Convert.ToInt32(Console.ReadLine());
+                ProductDetails product =  new ProductDetails();
+                product.ProductType = type;
+                product.ProductQuantity = count;
+                product.ProductPrice = SKU.GetPriceByType(product).ProductPrice; 
+                products.Add(product);
+                a = a - count;
             }
-
-            int totalPrice = GetTotalPrice(products);
+            
+            int totalPrice = SKU.GetTotal(products);
             Console.WriteLine(totalPrice);
             Console.ReadLine();
         }
