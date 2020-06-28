@@ -6,32 +6,32 @@ namespace Coding_SKU.Models
 {
     public class SKU:InterfaceSKU
     {
-        public ProductDetails GetPriceByType(ProductDetails product)
+        public int GetPriceByType(ProductDetails product)
         {
             switch (product.ProductType)
             {
                 case "A":
                     product.ProductPrice = 50;
-                    product.ProductType = "A";
+                    
 
                     break;
                 case "B":
                     product.ProductPrice = 30;
-                    product.ProductType = "B";
+                 
 
                     break;
                 case "C":
                     product.ProductPrice = 20;
-                    product.ProductType = "C";
+                   
 
                     break;
                 case "D":
                     product.ProductPrice = 15;
-                    product.ProductType = "D";
+                   
                     break;
             }
 
-            return product;
+            return product.ProductPrice;
         }
 
         private int GetTotalPriceForEachType(ProductDetails product)
@@ -116,6 +116,7 @@ namespace Coding_SKU.Models
                 var Product = new ProductDetails();
                 Product.ProductType = "C";
                 Product.ProductQuantity = totalC;
+                Product.ProductPrice = GetPriceByType(Product);
                 total += GetTotalPriceForEachType(Product);
 
             }
@@ -130,6 +131,7 @@ namespace Coding_SKU.Models
                 var Product = new ProductDetails();
                 Product.ProductType = "D";
                 Product.ProductQuantity = totalD;
+                Product.ProductPrice = GetPriceByType(Product);
                 total += GetTotalPriceForEachType(Product);
             }
 

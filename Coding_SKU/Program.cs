@@ -13,7 +13,7 @@ namespace Coding_SKU
 
             List<ProductDetails> products = new List<ProductDetails>();
 
-            Console.WriteLine("total number of order");
+            Console.WriteLine("total number of items in the order");
             int a = Convert.ToInt32(Console.ReadLine());
             while (a > 0)
             {
@@ -25,7 +25,7 @@ namespace Coding_SKU
                 ProductDetails product =  new ProductDetails();
                 product.ProductType = type;
                 product.ProductQuantity = count;
-                product.ProductPrice = SKU.GetPriceByType(product).ProductPrice; 
+                product.ProductPrice = SKU.GetPriceByType(product); 
                 products.Add(product);
                 a = a - count;
             }

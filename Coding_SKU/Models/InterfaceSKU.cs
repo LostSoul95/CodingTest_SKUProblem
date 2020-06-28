@@ -6,7 +6,7 @@ namespace Coding_SKU.Models
 {
     public interface InterfaceSKU
     {
-        ProductDetails GetPriceByType(ProductDetails product);
+        int GetPriceByType(ProductDetails product);
         int GetTotal(List<ProductDetails> products);
     }
 }
